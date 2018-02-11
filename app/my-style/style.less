@@ -54,7 +54,7 @@ body{
       border-radius: 2px;
       position: absolute;
       left: 0;
-      top: 2px;
+      top: 1px;
     }
     &:checked + span:before{
       background: @theme-color;
@@ -76,7 +76,7 @@ body{
       border-left: 2px solid @color-white;
       border-bottom: 2px solid @color-white;
       transform: rotate(-45deg);
-      top: 7px;
+      top: 6px;
       left: 4px;
     }
   }
@@ -101,7 +101,7 @@ body{
       border-radius: 50%;
       position: absolute;
       left: 0;
-      top: 2px;
+      top: 1px;
     }
     &:checked + span:before{
       border-color: @theme-color;
@@ -120,7 +120,7 @@ body{
       height: 8px;
       position: absolute;
       transform: rotate(-45deg);
-      top: 7px;
+      top: 6px;
       left: 5px;
       border-radius: 50%;
       background: @theme-color;
@@ -235,4 +235,14 @@ body{
     background: @color-light-gray;
     color: @color-dark-gray;
   }
+}
+
+.mz-select{
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 5px 25px 5px 10px;
+    min-width: 100px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAFBAMAAABV8cp5AAAAHlBMVEX///9VVVX7+/v19fXx8fGkpKSSkpKBgYF4eHiFhYUcD+weAAAAJklEQVQI12MIFBQUDGAAAzZBQTEGCGAqFCxigAILCQMYk2UKlAEAYGEDIb0LYqIAAAAASUVORK5CYII=") center right no-repeat @color-white;
+    border-radius: 2px;
 }
