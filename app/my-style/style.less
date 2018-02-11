@@ -1,0 +1,206 @@
+/**
+ * Copyright (c) 2014-2018 NighthawkStudio, All rights reserved.
+ * @fileoverview my frontend style
+ * @author Michael Zhang | michaelji520@gmail.com
+ * @version 1.0 | 2018-02-06 | initial version
+ */
+
+@theme-color: #45B7FF;
+@font-size: 14px;
+@border-color: #b5b5b5;
+@color-light-gray: #f1f1f1;
+@color-dark-gray: #d0d0d0;
+@color-light-blue: #48B7FF;
+@color-dark-blue: #2c7cec;
+@color-green: #22c93d;
+@color-red: #ff3939;
+@color-orange: #ff9110;
+@color-white: #fff;
+
+body, button, dd, dl, dt, h1, h2, h3, h4, h5, h6, input, li, ol, optgroup, p, select, textarea, ul{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-size: @font-size;
+}
+*{
+  box-sizing: border-box;
+}
+
+.main-section{
+  padding: 30px 20px;
+  h3{
+    font-weight: normal;
+    margin: 15px 0 10px 0; 
+  }
+}
+
+.mz-checkbox{
+  position: relative;
+  display: inline-block;
+  input[type="checkbox"]{
+    display: none;
+    & + span{
+      display: inline-block;
+      padding: 0 0 0 21px;
+    }
+    & + span:before{
+      content: " ";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid @border-color;
+      border-radius: 2px;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+    &:checked + span:before{
+      background: @theme-color;
+      border-color: @theme-color;
+    }
+    &[disabled] + span:before{
+      background: @color-light-gray;
+    }
+    &:checked[disabled] + span:before{
+      border-color: @color-dark-gray;
+      background: @color-dark-gray;
+    }
+    &:checked + span:after{
+      content: " ";
+      display: inline-block;
+      width: 9px;
+      height: 4px;
+      position: absolute;
+      border-left: 2px solid @color-white;
+      border-bottom: 2px solid @color-white;
+      transform: rotate(-45deg);
+      top: 7px;
+      left: 4px;
+    }
+  }
+}
+
+
+.mz-radio{
+  position: relative;
+  display: inline-block;
+  input[type="radio"]{
+    display: none;
+    & + span{
+      display: inline-block;
+      padding: 0 0 0 21px;
+    }
+    & + span:before{
+      content: " ";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid @border-color;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+    &:checked + span:before{
+      border-color: @theme-color;
+    }
+    &[disabled] + span:before{
+      background: @color-light-gray;
+    }
+    &:checked[disabled] + span:before{
+      background: @color-white;
+      border-color: @color-dark-gray;
+    }
+    &:checked + span:after{
+      content: " ";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      transform: rotate(-45deg);
+      top: 7px;
+      left: 5px;
+      border-radius: 50%;
+      background: @theme-color;
+    }
+    &[disabled]:checked + span:after{
+      background: @color-dark-gray;
+    }
+  }
+}
+
+.mz-btn{
+  background: @color-white;
+  border: 1px solid @border-color;
+  border-radius: 2px;
+  padding: 5px 15px;
+  cursor: pointer;
+  outline: none;
+  &:hover{
+    background: @color-light-gray;
+  }
+  &:active, &:focus{
+    background: @color-dark-gray;
+  }
+}
+.mz-btn-primary{
+  color: @color-white;
+  border-color: @color-dark-blue;
+  background-color: @color-dark-blue;
+  &:hover{
+    background-color: darken(@color-dark-blue, 5%);
+  }
+  &:active, &:focus{
+    background: darken(@color-dark-blue, 10%);
+  }
+}
+
+.mz-btn-success{
+  color: @color-white;
+  border-color: @color-green;
+  background-color: @color-green;
+  &:hover{
+    background-color: darken(@color-green, 5%);
+  }
+  &:active, &:focus{
+    background: darken(@color-green, 10%);
+  }
+}
+
+.mz-btn-warning{
+  color: @color-white;
+  border-color: @color-orange;
+  background-color: @color-orange;
+  &:hover{
+    background-color: darken(@color-orange, 5%);
+  }
+  &:active, &:focus{
+    background: darken(@color-orange, 10%);
+  }
+}
+
+.mz-btn-danger{
+  color: @color-white;
+  border-color: @color-red;
+  background-color: @color-red;
+  &:hover{
+    background-color: darken(@color-red, 5%);
+  }
+  &:active, &:focus{
+    background: darken(@color-red, 10%);
+  }
+}
+
+.mz-btn-info{
+  color: @color-white;
+  border-color: @color-light-blue;
+  background-color: @color-light-blue;
+  &:hover{
+    background-color: darken(@color-light-blue, 5%);
+  }
+  &:active, &:focus{
+    background: darken(@color-light-blue, 10%);
+  }
+}

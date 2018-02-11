@@ -1,0 +1,74 @@
+<!--
+* Copyright (c) 2014-2018 NighthawkStuio, All rights reserved.
+* @fileoverview my frontend style
+* @author Michael Zhang | michaelji520@gmail.com
+* @version 1.0 | 2018-02-06 | initial version
+--!>
+
+<html>
+  <head>
+    <title>Michael Zhang's Style Library</title>
+    <link rel="stylesheet/less" type="text/css" href="style.less">
+  </head>
+
+  <body>
+    <div class="main-section">
+      <h3>多选框</h2>
+      <label class="mz-checkbox">
+        <input type="checkbox"/>
+        <span>正常</span>
+      </label>
+      <label class="mz-checkbox">
+        <input type="checkbox" disabled/>
+        <span>未选&禁用</span>
+      </label>
+      <label class="mz-checkbox">
+        <input type="checkbox" checked disabled/>
+        <span>选中&禁用</span>
+      </label>
+
+      <h3>单选框</h3>
+      <label class="mz-radio">
+        <input type="radio" name="actor"/>
+        <span>二丫</span>
+      </label>
+      <label class="mz-radio">
+        <input type="radio" name="actor"/>
+        <span>三傻</span>
+      </label>
+      <label class="mz-radio">
+        <input type="radio" name="actor"/>
+        <span>囧雪诺</span>
+      </label>
+      <label class="mz-radio">
+        <input type="radio" name="others" disabled/>
+        <span>瑟曦</span>
+      </label>
+      <label class="mz-radio">
+        <input type="radio" name="others" checked disabled/>
+        <span>龙妈</span>
+      </label>
+      
+      <h3>按钮</h3>
+      <button class="mz-btn">普通按钮</button>
+      <button class="mz-btn mz-btn-primary">主要按钮</button>
+      <button class="mz-btn mz-btn-success">成功</button>
+      <button class="mz-btn mz-btn-warning">警告</button>
+      <button class="mz-btn mz-btn-danger">危险</button>
+      <button class="mz-btn mz-btn-info">一般</button>
+    </div>
+    <script>
+      less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: ":/a.com/"
+      };
+    </script>
+    <script src="http://7xj5yc.com1.z0.glb.clouddn.com/less.min.js" type="text/javascript"></script>
+  </body>
+</html>
