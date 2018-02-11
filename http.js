@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2014-2018 Zuoyebang, All rights reserved.
- * @fileoverview
- * @author zhangji01 | zhangji01@zuoyebang.com
+ * Copyright (c) 2014-2018 NighthawkStuio, All rights reserved.
+ * @fileoverview start lcoal server
+ * @author Michael Zhang | michaelji520@gmail.com
  * @version 1.0 | 2018-02-06 | initial version
  */
 

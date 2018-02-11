@@ -138,13 +138,25 @@ body{
   padding: 5px 15px;
   cursor: pointer;
   outline: none;
+  vertical-align: middle;
+  line-height: 1;
+  // 由于不同的浏览器对于button标签有默认样式，会导致跟a标签按钮高度不一致
+  // 这里进行了样式的统一处理
+  font: normal 14px sans-seif;
   &:hover{
     background: @color-light-gray;
   }
   &:active, &:focus{
     background: @color-dark-gray;
   }
+  &:disabled{
+    cursor: not-allowed;
+    color: @color-dark-gray;
+    border-color: @color-dark-gray;
+    background: @color-white;
+  }
 }
+
 .mz-btn-primary{
   color: @color-white;
   border-color: @color-dark-blue;
@@ -154,6 +166,10 @@ body{
   }
   &:active, &:focus{
     background: darken(@color-dark-blue, 10%);
+  }
+  &:disabled{
+    background: @color-light-gray;
+    color: @color-dark-gray;
   }
 }
 
@@ -167,6 +183,10 @@ body{
   &:active, &:focus{
     background: darken(@color-green, 10%);
   }
+  &:disabled{
+    background: @color-light-gray;
+    color: @color-dark-gray;
+  }
 }
 
 .mz-btn-warning{
@@ -178,6 +198,10 @@ body{
   }
   &:active, &:focus{
     background: darken(@color-orange, 10%);
+  }
+  &:disabled{
+    background: @color-light-gray;
+    color: @color-dark-gray;
   }
 }
 
@@ -191,6 +215,10 @@ body{
   &:active, &:focus{
     background: darken(@color-red, 10%);
   }
+  &:disabled{
+    background: @color-light-gray;
+    color: @color-dark-gray;
+  }
 }
 
 .mz-btn-info{
@@ -202,5 +230,9 @@ body{
   }
   &:active, &:focus{
     background: darken(@color-light-blue, 10%);
+  }
+  &:disabled{
+    background: @color-light-gray;
+    color: @color-dark-gray;
   }
 }
