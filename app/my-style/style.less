@@ -307,6 +307,7 @@ body{
     }
     &[disabled] + span{
       background: @color-dark-gray;
+      cursor: not-allowed;
     }
     &:checked[disabled] + span{
       border-color: @color-dark-gray;
@@ -314,6 +315,76 @@ body{
     }
   }
 }
+
+
+.mz-switch-slide{
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  input[type="checkbox"]{
+    display: none;
+    & + span{
+      display: inline-block;
+      overflow: hidden;
+      background: #888;
+      transform: skew(-10deg);
+      width: 64px;
+      height: 32px;
+      backface-visibility: hidden;
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    }
+    & + span:before{
+      content: attr(data-tg-off);
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 5px;
+      transform: skew(10deg);
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    & + span:after{
+      content: attr(data-tg-on);
+      display: inline-block;
+      position: absolute;
+      left: 100%;
+      top: 5px;
+      transform: skew(10deg);
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    & + span:active:before{
+      left: -10%;
+    }
+    &:checked + span:active:after{
+      left: 10%;
+    }
+    &:checked + span{
+      background: @theme-color;
+    }
+    &:checked + span:before{
+      left: -100%;
+    }
+    &:checked + span:after{
+      left: 0;
+    }
+    &[disabled] + span{
+      background: @color-dark-gray;
+      cursor: not-allowed;
+    }
+    &:checked[disabled] + span{
+      border-color: @color-dark-gray;
+      background: @color-dark-gray;
+    }
+  }
+}
+
 
 // 自定义滚动条样式
 ::-webkit-scrollbar{
