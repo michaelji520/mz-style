@@ -287,7 +287,7 @@ body{
       background: rgba(0, 0, 0, 0.4);
     }
     & + span:before{
-      content: " ";
+      content: "";
       display: inline-block;
       width: 18px;
       height: 18px;
@@ -334,6 +334,7 @@ body{
       font-size: 16px;
       font-weight: bold;
       text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+      color: #fff;
     }
     & + span:before{
       content: attr(data-tg-off);
@@ -342,7 +343,6 @@ body{
       left: 0;
       top: 5px;
       transform: skew(10deg);
-      color: #fff;
       width: 100%;
       text-align: center;
       transition: all 0.2s ease;
@@ -354,7 +354,6 @@ body{
       left: 100%;
       top: 5px;
       transform: skew(10deg);
-      color: #fff;
       width: 100%;
       text-align: center;
       transition: all 0.2s ease;
@@ -385,6 +384,79 @@ body{
   }
 }
 
+.mz-switch-rotate{
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  input[type="checkbox"]{
+    display: none;
+    & + span{
+      display: inline-block;
+      width: 64px;
+      height: 32px;
+      backface-visibility: hidden;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      transition: all 0.2s ease;
+      border-radius: 2px;
+      -webkit-perspective: 100px;
+      perspective: 100px;
+    }
+    & + span:before, & + span:after{
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      line-height: 2em;
+      width: 100%;
+      text-align: center;
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+      border-radius: 2px;
+      // backface-visibility:该属性定义当元素不面向屏幕时是否可见
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    & + span:before{
+      content: attr(data-tg-off);
+      background: @color-red;
+    }
+    & + span:after{
+      content: attr(data-tg-on);
+      -webkit-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+      background: @theme-color;
+    }
+    & + span:active:before{
+      -webkit-transform: rotateY(-20deg);
+      transform: rotateY(-20deg);
+    }
+    &:checked + span:before{
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+    &:checked + span:active:after{
+      -webkit-transform: rotateY(20deg);
+      transform: rotateY(20deg);
+
+    }
+    &:checked + span:after{
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+      left: 0;
+      background: @theme-color;
+    }
+    &[disabled] + span{
+      background: @color-dark-gray;
+      cursor: not-allowed;
+    }
+    &:checked[disabled] + span{
+      border-color: @color-dark-gray;
+      background: @color-dark-gray;
+    }
+  }
+}
 
 // 自定义滚动条样式
 ::-webkit-scrollbar{
