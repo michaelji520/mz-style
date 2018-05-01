@@ -447,13 +447,13 @@ body{
       left: 0;
       background: @theme-color;
     }
-    &[disabled] + span{
+    &[disabled] + span:before{
       background: @color-dark-gray;
       cursor: not-allowed;
     }
-    &:checked[disabled] + span{
-      border-color: @color-dark-gray;
+    &:checked[disabled] + span:after{
       background: @color-dark-gray;
+      cursor: not-allowed;
     }
   }
 }
