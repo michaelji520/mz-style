@@ -31,9 +31,38 @@ body{
 .main-section{
   padding: 30px 20px;
   h3{
-    font-weight: normal;
     margin: 15px 0 10px 0; 
   }
+}
+
+// 自定义滚动条样式
+::-webkit-scrollbar{
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-button{
+}
+::-webkit-scrollbar-track{
+}
+::-webkit-scrollbar-track-piece{
+  background-color: #eee;
+  margin: -2px;
+}
+::-webkit-scrollbar-thumb{
+  background: #ccc;
+  min-height: 150px;
+  min-width: 150px;
+  border-radius: 10px;
+  &:vertical:hover{
+    background: #aaaaaa;
+  }
+  &:horizontal:hover{
+    background: #aaaaaa;
+  }
+}
+::-webkit-scrollbar-corner{
+}
+::-webkit-resizer{
 }
 
 .mz-checkbox{
@@ -458,32 +487,12 @@ body{
   }
 }
 
-// 自定义滚动条样式
-::-webkit-scrollbar{
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-button{
-}
-::-webkit-scrollbar-track{
-}
-::-webkit-scrollbar-track-piece{
-  background-color: #eee;
-  margin: -2px;
-}
-::-webkit-scrollbar-thumb{
-  background: #ccc;
-  min-height: 150px;
-  min-width: 150px;
-  border-radius: 10px;
-  &:vertical:hover{
-    background: #aaaaaa;
+.mz-table{
+  width: 100%;
+  text-align: center;
+  thead{
   }
-  &:horizontal:hover{
-    background: #aaaaaa;
+  tbody{
   }
-}
-::-webkit-scrollbar-corner{
-}
-::-webkit-resizer{
+
 }
