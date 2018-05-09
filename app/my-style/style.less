@@ -490,9 +490,20 @@ body{
 .mz-table{
   width: 100%;
   text-align: center;
-  thead{
+  border-collapse: collapse;
+  th, td{
+    padding: 8px;
   }
-  tbody{
+  th{
+    border-bottom: 2px solid #ddd;
   }
-
+  td{
+    border-bottom: 1px solid #ddd;
+  }
+  & > tbody > tr:nth-child(odd){
+    background: #f9f9f9;
+  }
+  & > tbody > tr:hover{
+    background: #eee;
+  }
 }
