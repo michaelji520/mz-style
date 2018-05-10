@@ -523,3 +523,32 @@ body{
   padding: 0 5px;
   cursor: pointer;
 }
+
+.mz-tag{
+  border-radius: 2px;
+  border: 1px solid @theme-color;
+  font-size: 12px;
+  padding: 3px 6px;
+  color: @theme-color;
+  background: lighten(@theme-color, 30%);
+  display: inline-block;
+  span{
+    position: relative;
+    width: 1px;
+    height: 12px;
+    transform: rotate(45deg);
+    background: #333;
+    display: inline-block;
+    margin: 0 5px 0 10px;
+    top: 2px;
+    cursor: pointer;
+    &:after{
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 12px;
+      transform: rotate(-90deg);
+      background: #333;
+    }
+  }
+}
