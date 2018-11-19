@@ -22,6 +22,7 @@
       };
     </script>
     <script src="https://cdn.bootcss.com/less.js/3.8.1/less.min.js" type="text/javascript"></script>
+    <script src="./less.min.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -86,6 +87,7 @@
       <div class="mz-alert-info">这是提示信息！</div>
       <div class="mz-alert-warning">这是警告信息！</div>
       <div class="mz-alert-success">这是提示信息！</div>
+      <button class="mz-btn" id="message">点我看效果!</button>
 
       <h3>状态切换按钮</h3>
       <span style="vertical-align:super;">普通按钮</span>
@@ -173,5 +175,20 @@
 
 
     </div>
+    <script>
+      let element = document.getElementById('message');
+      element.addEventListener('click', (e) => {
+        console.log('test');
+        let wrapper = document.createElement('div');
+        let closeBtn = document.createElement('i');
+        closeBtn.classList.add('icon-cancel');
+        wrapper.appendChild(closeBtn);
+        wrapper.classList.add('mz-message');
+        wrapper.classList.add('mz-alert-error');
+
+        wrapper.style.cssText = 'position: fixed; left: 0; top: 0;';
+        document.body.appendChild(wrapper);
+      });
+    </script>
   </body>
 </html>

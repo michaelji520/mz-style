@@ -17,6 +17,12 @@
 @color-orange: #ff9110;
 @color-white: #fff;
 
+@font-face{
+   font-family: 'entypo';
+   src: url('./fonts/entypo.eot');
+   src: url('../fonts/entypo.woff') format('woff'), url('../fonts/entypo.ttf') format('truetype'), url('../fonts/entypo.svg') format('svg');
+}
+
 body, button, dd, dl, dt, h1, h2, h3, h4, h5, h6, input, li, ol, optgroup, p, select, textarea, ul{
   margin: 0;
   padding: 0;
@@ -34,6 +40,21 @@ body{
     margin: 15px 0 10px 0; 
   }
 }
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: 'entypo';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  opacity: 0.8;
+}
+
+@import './icons.less';
 
 // 自定义滚动条样式
 ::-webkit-scrollbar{
@@ -274,6 +295,15 @@ body{
     min-width: 100px;
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAFBAMAAABV8cp5AAAAHlBMVEX///9VVVX7+/v19fXx8fGkpKSSkpKBgYF4eHiFhYUcD+weAAAAJklEQVQI12MIFBQUDGAAAzZBQTEGCGAqFCxigAILCQMYk2UKlAEAYGEDIb0LYqIAAAAASUVORK5CYII=") center right no-repeat @color-white;
     border-radius: 2px;
+}
+
+.mz-message {
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 2px;
+  background: @theme-color;
+  width: 100%;
+  height: 40px;
 }
 
 .mz-alert-error{
