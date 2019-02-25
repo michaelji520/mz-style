@@ -13,12 +13,18 @@ var mine=require('./mime').types;//
 var path=require('path');
 
 var http = require('http');
+var https = require('https');
 // 引入文件读取模块
 var fs = require('fs');
+
+const httpsOptions = {
+  key: fs.readFileSync('./certification/1829683_www.zhangji.xyz.key'),
+  cert: fs.readFileSync('./certification/1829683_www.zhangji.xyz.pem')
+};
 //需要访问的文件的存放目录
 var documentRoot = 'app';
 
-var server = http.createServer(function (req, res) {
+var server = https.createServer(httpsOptions, (req, res) => {
     //客户端输入的url，例如如果输入localhost:8888/index.html
     //那么这里的url == /index.html
     var url = req.url;
