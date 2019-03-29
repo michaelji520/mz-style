@@ -1,16 +1,206 @@
 <!--
-* Copyright (c) 2014-2018 NighthawkStudio, All rights reserved.
-* @fileoverview my frontend tools
+* Copyright (c) 2014-2018 NighthawkStuio, All rights reserved.
+* @fileoverview my frontend style
 * @author Michael Zhang | michaelji520@gmail.com
-* @version 1.0 | 2018-02-07 | initial version
+* @version 1.0 | 2018-02-06 | initial version
 --!>
 
 <html>
   <head>
+    <title>Michael Zhang's Style Library</title>
+    <link rel="stylesheet/less" type="text/css" href="style.less">
+    <script>
+      less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: ":/a.com/"
+      };
+    </script>
+    <script src="https://cdn.bootcss.com/less.js/3.8.1/less.min.js" type="text/javascript"></script>
+    <script src="./less.min.js" type="text/javascript"></script>
   </head>
 
   <body>
-    <a href="./my-style/index.html">我的样式库</a>
-    <a href="./icon/demo.html">图标库</a>
+    <div class="container">
+      <nav class="nav">
+        <a href="#button">按钮样式</a>
+      </nav>
+      <div class="main-section">
+        <h1 id="button">按钮</h1>
+        <h3>butotn, input, a 标签按钮</h3>
+        <button class="mz-btn">button按钮</button>
+        <input type="button" class="mz-btn" value="input按钮">
+        <a class="mz-btn">a按钮</a>
+
+        <h3>butotn, input, a 标签按钮</h3>
+        <button class="mz-btn">普通按钮</button>
+        <button class="mz-btn mz-btn-primary">主要按钮</button>
+        <button class="mz-btn mz-btn-success">成功</button>
+        <button class="mz-btn mz-btn-warning">警告</button>
+        <button class="mz-btn mz-btn-danger">危险</button>
+        <button class="mz-btn mz-btn-info">一般</button>
+        <button class="mz-btn" disabled>禁用1</button>
+        <button class="mz-btn mz-btn-info" disabled>禁用2</button>
+        <input type="button" class="mz-btn" value="input按钮">
+        <a class="mz-btn">a标签按钮</a>
+
+        <h3>多选框</h2>
+        <label class="mz-checkbox">
+          <input type="checkbox"/>
+          <span>正常</span>
+        </label>
+        <label class="mz-checkbox">
+          <input type="checkbox" disabled/>
+          <span>未选&禁用</span>
+        </label>
+        <label class="mz-checkbox">
+          <input type="checkbox" checked disabled/>
+          <span>选中&禁用</span>
+        </label>
+
+        <h3>单选框</h3>
+        <label class="mz-radio">
+          <input type="radio" name="actor"/>
+          <span>二丫</span>
+        </label>
+        <label class="mz-radio">
+          <input type="radio" name="actor"/>
+          <span>三傻</span>
+        </label>
+        <label class="mz-radio">
+          <input type="radio" name="actor"/>
+          <span>囧雪诺</span>
+        </label>
+        <label class="mz-radio">
+          <input type="radio" name="others" disabled/>
+          <span>瑟曦</span>
+        </label>
+        <label class="mz-radio">
+          <input type="radio" name="others" checked disabled/>
+          <span>龙妈</span>
+        </label>
+
+
+        <h3>下拉框</h3>
+        <select class="mz-select">
+          <option>请选择</option>
+          <option>苹果</option>
+          <option>香蕉</option>
+        </select>
+
+        <h3>错误提示</h3>
+        <div class="mz-alert-error">这是错误信息！</div>
+        <div class="mz-alert-info">这是提示信息！</div>
+        <div class="mz-alert-warning">这是警告信息！</div>
+        <div class="mz-alert-success">这是提示信息！</div>
+        <button class="mz-btn" id="message">点我看效果!</button>
+
+        <h3>状态切换按钮</h3>
+        <span style="vertical-align:super;">普通按钮</span>
+        <label class="mz-switch">
+          <input type="checkbox"/>
+          <span></span>
+        </label>
+        <span style="vertical-align:super;">未切换禁用按钮</span>
+        <label class="mz-switch">
+          <input type="checkbox" disabled/>
+          <span></span>
+        </label>
+        <span style="vertical-align:super;">已切换禁用按钮</span>
+        <label class="mz-switch">
+          <input type="checkbox" checked disabled/>
+          <span></span>
+        </label>
+
+        <span style="vertical-align:super;">其他效果:</span>
+        <label class="mz-switch-slide">
+          <input type="checkbox"/>
+          <span data-tg-on="开" data-tg-off="关"></span>
+        </label>
+        <label class="mz-switch-rotate">
+          <input type="checkbox"/>
+          <span data-tg-on="开" data-tg-off="关"></span>
+        </label>
+
+        <h3>表格</h3>
+        <table class="mz-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>姓名</th>
+              <th>性别</th>
+              <th>爱好</th>
+            </tr>
+          <thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>二丫</td>
+              <td>女</td>
+              <td>变脸</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>三傻</td>
+              <td>女</td>
+              <td>你才傻</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>囧雪诺</td>
+              <td>男</td>
+              <td>啥也不知道</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>输入框</h3>
+        <input class="mz-input" placeholder="type something" type="text"/>
+
+        <h3>带标识输入框</h3>
+        <input class="mz-input" placeholder="type something" type="text"/><span class="mz-input-addon mz-btn-primary">Search</span>
+
+        <h3>标签</h3>
+        <label class="mz-tag">
+          冰与火之歌<span></span>
+        </label>
+        <label class="mz-tag">
+          权力的游戏<span></span>
+        </label>
+
+        <h3>模态层</h3>
+        <div class="mz-modal">
+        </div>
+        <h3>导航栏</h3>
+        <h3>分页</h3>
+        <h3>图片/文件上传</h3>
+        <h3>进度条(条形/环形/页面顶部条)</h3>
+        <h3>消息标记(万恶的小红点)</h3>
+        <h3>加载提示</h3>
+        <h3>Tab标签页</h3>
+
+
+
+      </div>
+    </div>
+    <script>
+      let element = document.getElementById('message');
+      element.addEventListener('click', (e) => {
+        console.log('test');
+        let wrapper = document.createElement('div');
+        let closeBtn = document.createElement('i');
+        closeBtn.classList.add('icon-cancel');
+        wrapper.appendChild(closeBtn);
+        wrapper.classList.add('mz-message');
+        wrapper.classList.add('mz-alert-error');
+
+        wrapper.style.cssText = 'position: fixed; left: 0; top: 0;';
+        document.body.appendChild(wrapper);
+      });
+    </script>
   </body>
 </html>
