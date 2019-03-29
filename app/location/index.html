@@ -1,0 +1,67 @@
+<!--
+* Copyright (c) 2014-2018 NighthawkStudio, All rights reserved.
+* @fileoverview
+* @author Michael Zhang | michaelji520@gmail.com
+* @version 1.0 | 2019-02-17
+--!>
+
+<html>
+  <head>
+    <title>获取当前位置</title>
+  </head>
+  <body>
+    <div id="position">正在获取当前位置...</div>
+    <script>
+      var Ajax = {
+        get: function (url, fn) {
+          let xhr = new XMLHttpRequest();
+          xhr.open('GET', url, true);
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200 || xhr.status === 304) {
+              fn.call(this, xhr.responseText);
+            }
+          };
+          xhr.send();
+        }
+      };
+      window['displayposition'] = function (res) {
+        console.log(res);
+        let str = document.querySelector('#position').innerHTML;
+        str += `您的当前位置: ${res.result.formatted_address}`;
+        document.querySelector('#position').innerHTML = str;
+      }
+      window['displaybaidu'] = function (res) {
+        console.log(res);
+        let str = document.querySelector('#position').innerHTML;
+        let pos = res.result[0];
+        str += `百度地图坐标(纬度：${res.result[0].lat}，经度：${res.result[0].lng})<br>`;
+        document.querySelector('#position').innerHTML = str;
+        let jsonp = document.createElement('script');
+        // 调用百度地图接口获取详细地址
+        jsonp.src = `https:\/\/api.map.baidu.com\/geocoder\/v2\/?callback=displayposition&location=${pos.lat},${pos.lng}&output=json&pois=1&ak=B7e3d6b248237bec007b53fc08d583bd`;
+        document.body.appendChild(jsonp);
+      }
+      navigator.geolocation.getCurrentPosition((position) => {
+        let longitude = position.coords.longitude;
+        let latitude = position.coords.latitude;
+        let str = `经度：${longitude}，纬度：${latitude}<br>`;
+        let url = `https:\/\/api.gpsspg.com\/convert\/coord\/\?callback=displaybaidu&output=jsonp&oid=9778&key=9685xx79z8w9u17190x9u20yx2114zxz2wvw6&from=0&to=2&latlng=${latitude},${longitude}`;
+        let jsonp = document.createElement('script');
+        jsonp.src = url;
+        document.body.appendChild(jsonp);
+        document.querySelector('#position').innerHTML = str;
+      }, (error) => {
+        console.log(error.message);
+        document.querySelector('#position').innerHTML = `获取当前位置失败(${error.message || '出错了'})<br>`;
+        let url = `https:\/\/api.gpsspg.com\/convert\/coord\/\?callback=displaybaidu&output=jsonp&oid=9778&key=9685xx79z8w9u17190x9u20yx2114zxz2wvw6&from=0&to=2&latlng=40.040568,116.311408`;
+        let jsonp = document.createElement('script');
+        jsonp.src = url;
+        document.body.appendChild(jsonp);
+      }, {
+        enableHighAccuracy: true,
+        timeout: 20 * 1000,
+        maximumAge: 60 * 1000
+      });
+    </script>
+  </body>
+</html>
